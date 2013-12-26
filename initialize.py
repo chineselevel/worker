@@ -14,4 +14,12 @@ compress(original="data/dict.txt.big", compressed="data/dict.compressed.spaces")
 
 print "Initializing redis..."
 from populate_redis import populate
-populate(redis_host='localhost', redis_port=6379, dict_file='data/dict.txt.big')
+redis_host = 'localhost'
+redis_port = 6379
+
+print "Putting scores into redis..."
+populate(redis_host=redis_host, redis_port=redis_port, dict_file='data/dict.txt.big')
+print "Putting ranks into redis..."
+populate_ranks(redis_host=redis_host, redis_port=redis_port)
+
+print "Done!"

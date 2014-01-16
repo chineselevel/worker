@@ -13,7 +13,7 @@ from compress_dict import compress
 compress(original="data/dict.txt.big", compressed="data/dict.compressed.spaces")
 
 print "Initializing redis..."
-from populate_redis import populate
+from populate_redis import populate, populate_ranks
 redis_host = 'localhost'
 redis_port = 6379
 
